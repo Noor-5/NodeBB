@@ -226,6 +226,9 @@ exports.webpack = async function (options) {
     if (!activePlugins.includes('nodebb-plugin-composer-default')) {
         activePlugins.push('nodebb-plugin-composer-default');
     }
+    if (!activePlugins.includes('nodebb-plugin-dbsearch')) {
+        activePlugins.push('nodebb-plugin-dbsearch');
+    }
     await fs.promises.writeFile(path.resolve(__dirname, '../../build/active_plugins.json'), JSON.stringify(activePlugins));
 
     const webpackCfg = getWebpackConfig();
